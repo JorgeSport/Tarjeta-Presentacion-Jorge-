@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge Florian - Tarjeta Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+        
+        .card {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        /* Tarjeta Frontal */
+        .card-front {
+            background: linear-gradient(135deg, #0056b3, #003366);
+            color: white;
+            padding-bottom: 20px;
+        }
+        
+        .front-header {
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .logo-container {
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            width: 150px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .tagline {
+            text-align: center;
+            padding: 15px;
+            font-style: italic;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .details {
+            padding: 0 30px;
+        }
+        
+        .name {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .position {
+            color: #8cc0ff;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .icon {
+            margin-right: 15px;
+            color: #8cc0ff;
+            font-size: 18px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Enlaces en la tarjeta frontal */
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Tarjeta Trasera */
+        .card-back {
+            background-color: white;
+            padding: 30px;
+        }
+        
+        .back-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .back-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0056b3;
+            margin-bottom: 5px;
+        }
+        
+        .back-tagline {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .experience {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .about {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .products {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .product {
+            text-align: center;
+            width: 22%;
+        }
+        
+        .product-icon {
+            background-color: #f0f2f5;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 20px;
+        }
+        
+        .product-name {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .social {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f2f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 12px;
+            color: #0056b3;
+            text-decoration: none;
+            font-size: 22px;
+            transition: all 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-link:hover {
+            background-color: #0056b3;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-link.facebook:hover {
+            background-color: #1877f2;
+        }
+        
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        
+        .social-link.whatsapp:hover {
+            background-color: #25d366;
+        }
+        
+        .social-link.web:hover {
+            background-color: #0099cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tarjeta Digital</h1>
+        
+        <!-- Tarjeta Frontal -->
+        <div class="card card-front">
+            <div class="front-header">
+                <div class="logo-container">
+                    <img src="https://res.cloudinary.com/detstbpo9/image/upload/v1742382942/logo_jboej9.png" alt="Logo Jorge Florian">
+                </div>
+            </div>
+            
+            <div class="tagline">Especialistas en Deportes de Aventura</div>
+            
+            <div class="details">
+                <div class="name">JORGE FLORIAN</div>
+                <div class="position">Especialista en Deportes de Excursiones</div>
+                
+                <div class="contact-info">
+                    <div class="icon">📱</div>
+                    <div><a href="https://wa.me/51920807184" target="_blank">+51 920 807 184 (WhatsApp)</a></div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="icon">✉️</div>
+                    <div><a href="mailto:contacto@equipatee.com">contacto@equipatee.com</a></div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="icon">🌐</div>
+                    <div><a href="https://equipatee.com/" target="_blank">equipatee.com</a></div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="icon">📍</div>
+                    <div>Lima, Perú</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tarjeta Trasera -->
+        <div class="card card-back">
+            <div class="back-header">
+                <div class="back-name">JORGE FLORIAN</div>
+                <div class="back-tagline">Equipamiento deportivo premium</div>
+            </div>
+            
+            <div class="experience">
+                16 años de experiencia en deportes outdoor
+            </div>
+            
+            <div class="about">
+                Especialistas en venta de equipamiento para deportes de aventura. Ofrecemos productos nuevos y de segunda mano en calzado, prendas y accesorios para trekking, senderismo, alpinismo, travel, running y trail.
+            </div>
+            
+            <div class="products">
+                <div class="product">
+                    <div class="product-icon">⛰️</div>
+                    <div class="product-name">Trekking</div>
+                </div>
+                <div class="product">
+                    <div class="product-icon">🥾</div>
+                    <div class="product-name">Calzado</div>
+                </div>
+                <div class="product">
+                    <div class="product-icon">🏃</div>
+                    <div class="product-name">Trail</div>
+                </div>
+                <div class="product">
+                    <div class="product-icon">🎒</div>
+                    <div class="product-name">Accesorios</div>
+                </div>
+            </div>
+            
+            <div class="social">
+                <a href="https://www.facebook.com/groups/978667268862795" class="social-link facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/equipatee" class="social-link instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/51920807184" class="social-link whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://equipatee.com" class="social-link web" target="_blank"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
